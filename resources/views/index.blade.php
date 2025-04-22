@@ -17,7 +17,7 @@
                     <div>
                         <table class="table table-bordered">
                             <tr>
-                                <th></th>
+                              
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Status</th>
@@ -27,16 +27,13 @@
                             
                             @foreach ($tasks as $task)
                                 <tr>
-                                    <th>
-                                        <input type="checkbox" >
-                                    </th>
                                     <th>{{$task->title}}</th>
                                     <th>{{$task->description}}</th>
                                     <th>
-                                        @if ($task->is_completed=1)
-                                            <span class="badge bg-warning">Pending</span>
+                                        @if ($task->is_completed)
+                                            <span class="badge bg-success">Done</span>
                                         @else
-                                             <span class="badge bg-success">Done</span>
+                                              <span class="badge bg-warning">Pending</span>
                                         @endif
                                     </th>
                                     <th class="d-flex gap-3">
